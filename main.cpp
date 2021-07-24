@@ -1,25 +1,24 @@
 #include <iostream>
-#include <vector>
-#include <string>
+#include "HinhChuNhat.h"
 
 using namespace std;
 
 int main()
 {
-    vector<string> msg {"Hello", "C++", "World", "from", "VS Code", "and the C++ extension!"};
-
-    for (const string& word : msg)
-    {
-        cout << word << " ";
-    }
-    cout << endl;
-
-    auto f = 1.11f;
-
-    printf("Number f is %f\n", f);
-
-    []{ std::cout << "Hello Lambda\n" << std::endl; }();
-    [](const std::string& x) { std::cout << x << std::endl; }("Hello lambda 2\n");
-
-    return 0;
+	HinhChuNhat hcn;
+	float chieuDai = 5;
+	float chieuRong = 3;
+	// Nap chieu dai va chieu rong hinh chu nhat
+	cout << "Nhap chieu dai hinh chu nhat: ";
+	cin >> chieuDai;
+	cout << "Nhap chieu rong hinh chu nhat: ";
+	cin >> chieuRong; 
+	hcn.setChieuDai(chieuDai);
+	hcn.setChieuRong(chieuRong);
+	float chuVi = hcn.tinhChuVi();
+	float dienTich = hcn.tinhDienTich();
+	cout << "Hinh chu nhat co chieu dai " << chieuDai << " va chieu rong " << chieuRong << ":" << endl;
+	cout << "Dien tich hinh chu nha la : " << dienTich << endl;
+	cout << "Chu vi hinh chu nhat la : " << chuVi << endl;
+	return 0;
 }
