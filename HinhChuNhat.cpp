@@ -2,7 +2,7 @@
 
 HinhChuNhat::HinhChuNhat()
 {
-	chieuDai = 1;
+	chieuDai = 0;
 	chieuRong = 0;
 }
 
