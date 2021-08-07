@@ -1,8 +1,9 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage('build') {
             steps {
+				echo 'Building the application...'
                 sh 'make'
             }
         }
