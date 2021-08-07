@@ -15,7 +15,7 @@ pipeline {
 				bat 'MSBuild unittest-win32-project/unittest-win32-project.sln /p:Configuration=Debug /p:Platform=X86'
 				bat """
 					cd unittest-win32-project/Debug
-					.\UnittestHinhChuNhat.exe --gtest_output="xml:XML_Report.xml" >> unit-test.log
+					UnittestHinhChuNhat.exe --gtest_output="xml:XML_Report.xml" >> unit-test.log
 				"""
             }
         }
