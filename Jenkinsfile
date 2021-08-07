@@ -7,7 +7,9 @@ pipeline {
             }
 			
             steps {
-                bat 'make'
+                bat """
+					make
+				"""
             }
         }
 		
@@ -18,12 +20,16 @@ pipeline {
             }
 			
             steps {
-                bat 'MSBuild unittest-win32-project\unittest-win32-project.sln /p:Configuration=Debug /p:Platform=X86'
+                bat """
+					MSBuild unittest-win32-project\unittest-win32-project.sln /p:Configuration=Debug /p:Platform=X86
+				"""
             }
 			
 			steps {
-                bat 'cd unittest-win32-project\Debug'
-				bat '.\UnittestHinhChuNhat.exe --gtest_output="xml:XML_Report.xml" >> unit-test.log'
+                bat """
+					cd unittest-win32-project\Debug
+					.\UnittestHinhChuNhat.exe --gtest_output="xml:XML_Report.xml" >> unit-test.log
+				"""
             }
         }	
 
